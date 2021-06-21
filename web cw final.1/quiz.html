@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz Page</title>
+	<style>
+	
+	body{
+	background-image:url("quiz background.jpg");
+	background-size:1580px 800px;
+    background-repeat: no-repeat;}
+	
+	h1{
+	font-family: 'calibri Light';
+    font-size:60px;
+	color:white;}
+	
+	#demo1{
+	color:red;
+	align:right;
+	font-size:30px;
+	font-family: 'Chewy', cursive	;
+	margin-left:30px;}
+	
+	div{
+	color:white;}
+	
+	
+	#quiz{
+    background-color: black;
+    border: 10px solid #575454;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    border-radius: 30px;
+    margin : 200px 400px 100px 400px;
+    }
+	
+	#question{
+	font-family: 'Calibri Light';
+    font-size:25px;
+    color: white;
+    margin-left: 30px;
+    margin-right:30px;
+	margin-top:30px;
+	font-weight: bold;
+	}
+	
+	#answerss{
+	font-family: 'Calibri Light';
+    font-size:20px;
+    color: white;
+    margin-left: 70px;
+    margin-right:30px;
+	margin-top:45px;
+	margin-bottom:70px;
+	font-weight: bold;
+	}
+	
+	#submit{
+	background-color: black;
+    border: 3px solid white;
+    border-radius:30px;
+    color: white;
+    padding: 12px 32px;
+   	margin-top: 3px;
+	margin-bottom: 30px;
+    margin-left:200px;
+	margin-right:3px;
+	display: inline-block;
+	text-align: center;
+	font-size: 20px;
+	cursor: pointer;
+	font-family: 'Basic', sans-serif;
+	font-weight:bold;
+	position:sticky-left;
+	}
+	
+	#start{
+	background-color: black;
+    border: 3px solid white;
+    color: white;
+    padding: 20px 40px;
+   	<!--margin-top: 100px;
+	margin-bottom: 3px;
+    margin-left:700px;-->
+	align:center;
+	/*display: inline-block;*/
+	text-align: center;
+	font-size: 20px;
+	cursor: pointer;
+	font-family: 'Basic', sans-serif;
+	font-weight:bold;
+	position:sticky-left;
+	}
+	
+	#btndone{
+	background-color: black;
+    border: 3px solid white;
+    color: white;
+    padding: 20px 40px;
+	margin-bottom:30px;
+	margin-left:200px;
+	margin-right:200px;
+    text-align: center;
+	}
+	
+	</style>
+</head>
+<body>
+<script type="text/javascript">
+	var x=0;
+	var n=0;
+	var questions  = new Array("01) How many players involved in a basketball team?",
+	"02) How many point will be get for a free throw? ",
+	"03) What is the name of the famous basketball player which we lost in 2020? ",
+	"04) Which country won the basketball championship in last Olympic? ",
+	"05) Who is the founder of basketball? ",
+	"06) Who scored 70 points in the NBA? ",
+	"07) When was the first NBA game? ",
+	"08) In feet, what is the hight of a basketball rim? ",
+	"09) Michel jordan's leaping ability earned him which name? ",
+	"10) Where is the birthplace of basketball? ");
+	var op1 = new Array(" 10"," 1"," Devin Booker "," Canada"," William G. Morgan"," Lebron James"," Feb. 7, 1947 ","9","Leaping Jordan","Springfield College");
+	var op2 = new Array(" 5"," 2"," Kobe Bryant "," UK"," James Naismith"," Kevin Durant"," Apr. 1, 1946","10","Leaping Air Ball","The Floating Court");
+	var op3 = new Array(" 8"," 3"," Michael Jordan "," USA"," Walter Camp"," Kyrie Irving"," Nov. 1, 1946","11","Air Ball","Angels Gate Park");
+	var op4 = new Array(" 11"," 4"," Larry Bird"," Australia"," Guglielmo Marconi"," Devin Booker"," Dec. 3, 1940","12","Air Jordan","House of Mamba");
+	var answers= new Array(2,1,2,3,2,4,3,2,4,1);
+	var userchoice=[];
+	var marks = 0;
+	var count=0;
+	var time = 120;
+	
+	function quizStart(){
+	document.getElementById("quizStart").style.display="none";
+	document.getElementById("quiz").style.display="block";
+	submit();
+	clock();
+	}
+	function clock(){
+	setInterval(timing,1000);
+	}
+	function timing(){
+	time=time-1;
+	if(time>=0){
+	var minutes= Math.floor(time/60);
+	var seconds=time%60;
+	document.getElementById("demo1").innerHTML=minutes+" Minutes "+seconds+" Seconds left";
+	}else{
+	document.getElementById("demo1").innerHTML="done";
+	results();
+	}
+	}
+	function submit(){
+	//var radioarray = document.getElementsByName("radio");
+	var radio1=document.getElementById("option1");
+	var radio2=document.getElementById("option2");
+	var radio3=document.getElementById("option3");
+	var radio4=document.getElementById("option4");
+	
+	if(radio1.checked){
+		userchoice[count]=1;
+	}else if(radio2.checked){
+		userchoice[count]=2;
+	}else if(radio3.checked){
+		userchoice[count]=3;
+	}else if(radio4.checked){
+		userchoice[count]=4;
+	}
+	radio1.checked=false;
+	radio2.checked=false;
+	radio3.checked=false;
+	radio4.checked=false;
+	if(count<10){
+	document.getElementById("question").innerHTML=questions[count];
+	document.getElementById("answer1").innerHTML=op1[count];
+	document.getElementById("answer2").innerHTML=op2[count];
+	document.getElementById("answer3").innerHTML=op3[count];
+	document.getElementById("answer4").innerHTML=op4[count];
+	document.getElementById("btnresult").style.display="none";
+	document.getElementById("res").style.display="none";
+	document.getElementById("btndone").style.display="none";
+	count=count+1;
+	}
+	else{ 			//clearing the radio buttons after end of questions
+	document.getElementById("question").innerHTML="Finished!!";
+	document.getElementById("answer1").style.display="none";
+	document.getElementById("answer2").style.display="none";
+	document.getElementById("answer3").style.display="none";
+	document.getElementById("answer4").style.display="none";
+	document.getElementById("option1").style.display="none";
+	document.getElementById("option2").style.display="none";
+	document.getElementById("option3").style.display="none";
+	document.getElementById("option4").style.display="none";
+	document.getElementById("submit").style.display="none";
+	//document.write(userchoice);
+	document.getElementById("btnresult").style.display="block";
+	document.getElementById("res").style.display="none";
+	document.getElementById("res").style.display="none";
+	document.getElementById("btndone").style.display="block";
+	}
+	}
+	function results(){
+	clearTimeout();
+	var q=1;
+	while(q<11){
+		if(userchoice[q]==answers[q-1]){
+			marks=marks+2;
+		}else{
+			marks=marks-1;
+		}
+	q=q+1;
+	}
+	document.getElementById("res").innerHTML="Total Marks: "+marks;
+	document.getElementById("res").style.display="block";
+	
+	//document.write("total marks are: "+marks);		//showing results 
+	
+	}
+</script>
+<div id="quizStart">
+	<h1 style="margin-top: 80px; color:white; background-color:black; " align="center">Let's Begin!!!</h1>
+	<button id="start" onclick="quizStart()">Start</button>
+	</div>
+</div>
+<p id="demo1"></p>
+<div id="quiz"style="display:none">
+	<div id="question"></div>
+	<div id="answerss">
+	<input type="radio" id="option1" name="radio" value="1"><label id="answer1"></label><br>
+	<input type="radio" id="option2" name="radio" value="2"><label id="answer2"></label><br>
+	<input type="radio" id="option3" name="radio" value="3"><label id="answer3"></label><br>
+	<input type="radio" id="option4" name="radio" value="4"><label id="answer4"></label><br>
+	</div>
+	<button id="submit" style="margin-top: 20px; margin-left:400px" onclick="submit()">Next</button>
+	<div id="res" style="margin-left: 36%;
+    font-size: x-large;"></div>
+	<button style="display:none; margin:28px 40%; background-color: black; border: 3px solid white; border-radius:30px; color: white; padding: 7px 30px; " id="btnresult" onclick="results()">See Results</button>
+	<a align="center" href="Quiz Front.html" id="btndone">DONE</a>
+</div>
+</body>
+</html>

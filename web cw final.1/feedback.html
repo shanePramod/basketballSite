@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FORM</title>
+	<script>
+		function validateForm() {
+  			var x = document.getElementById("name").value;
+  		
+  			if (x.length == 0){
+    			alert ("Name must be filled out");
+    			return false;
+  				}
+			
+			var radioArray = document.getElementsByName('ratings');
+			if (!document.getElementById("rad1").checked && !document.getElementById("rad2").checked && !document.getElementById("rad3").checked && !document.getElementById("rad4").checked && !document.getElementById("rad5").checked)
+			{			
+				alert("Please rate us");
+			return;
+			}
+			}
+	</script>
+	<style>
+		body{
+			background-color: black;
+		}
+		.comment{
+				display: flex;
+				}
+		
+		label{color: white;}
+		#lbl{
+			
+			width: 20%;
+			color: white;
+		}
+		.form{
+			position: absolute;
+			top: 250px;
+			right: 600px;
+		}
+				ul{
+			word-spacing: 20px;
+		}
+		li{
+			display: inline;
+		}
+		#img1{width: 1900px}
+
+		.btn{
+			background-color: transparent;
+			border-color: transparent;
+			color: white;
+			padding: 15px 5px;
+			text-align: center;
+			font-size: 23px;
+			cursor: pointer;
+			font-family:calibri light; 
+		}
+		.btn:hover{background-color: #0d0d0d}
+
+		.logo {
+			width: 250px;
+			height: 180px;
+		}
+
+		.topnav{
+			position: absolute;
+			left: 300px;
+			top: 80px;
+			/*background-color: #595957;*/
+
+		}
+	</style>
+</head>
+<body>
+<img class="logo" src="WEB LOGO.png">
+	<ul>
+	<div class="topnav">
+ 		<li><a href="MainPage.html"><button class="btn">HOME</button></a></li>
+ 		<li><a href="EXPLORA.html">    <button class="btn">EXPLORE</button></a></li>
+ 		<li><a href="gallary.html"> <button class="btn">GALLERY</button></a></li>
+ 		<li><a href="product.html"> <button class="btn">PRODUCTS</button></a></li>
+ 		<li><a href="Quiz Front.html"> <button class="btn">REWARDS</button></a></li>
+ 		<li><a href="feedback.html"> <button class="btn">FEEDBACK</button></a></li>
+ 		<li><a href="about us.html"> <button class="btn">ABOUT US</button></a></li>
+ 		<a href="cart.html"><img src="shop.png" width="50" height="50"  alt="cart"></a>
+ 		<a href="harindi.html"><img src="user.png" width="35" height="35" style="border-radius: 50px" alt="user"></a>
+ 		
+ 	</div>
+ 	</ul>
+		<hr style="width:auto; height:7px; color: gray;background-color: gray;">
+ 		<br>
+
+
+	<div class="form">
+	<h1>forms</h1>
+	<form name="forms" onsubmit="return button_onclick()" method="post">
+		<label id="lbl" for="fname"> Name: </label>
+		<input class="textbox" type="text" id="name" name="name">
+		<br><br><br><br>
+
+		<label id="lbl" for="email">Email Address:</label>
+		<input type="email" id="email" name="email">
+		<br><br><br><br>
+
+		<span class="comment">
+		<label id="lbl" for="comments"> Comments: </label> 
+		<textarea name="comments" id="comment" rows="5" cols="50"> </textarea>
+		</span>
+		<br><br><br><br>
+
+		<label id="lbl" for="ratings"> Rate:</label>
+
+		<input id="rad1" type="radio" name="ratings">
+		<label id="lbl1" for="poor">Poor</label>
+
+		<input id="rad2" type="radio" name="ratings">
+		<label id="lbl1" for="fair">Fair</label>
+
+		<input id="rad3" type="radio" name="ratings">
+		<label  id="lbl1" for="average">Average</label>
+
+		<input id="rad4" type="radio" name="ratings">
+		<label id="lbl1" for="good">Good</label>
+
+		<input id="rad5" type="radio" name="ratings">
+		<label id="lbl1" for="excellent">Excellent</label>
+		<br><br><br><br><br>
+
+		<input type="submit" name="submit" style="width: 100px;height: 30px; font-size: 20px;" onclick="validateForm();">
+		<script>
+			function radiocheck(){
+				var rate;
+				if (document.getElementById("rad1").checked){
+					rate="poor";
+				}else if (document.getElementById("rad2").checked){
+					rate="Fair";
+				}else if (document.getElementById("rad3").checked){
+					rate="Avarage";
+				}else if (document.getElementById("rad4").checked){
+					rate="Good";
+				}else if(document.getElementById("rad5").checked){
+					rate="Excellent";
+				}
+				return rate;
+			}
+			function button_onclick() {
+				var name= document.getElementById("name").value;
+				var comment=document.getElementById("comment").value;
+				alert("Dear "+name+", Thank you very much for your feedback. You have rated our site as "+radiocheck()+" and your comment was "+comment);
+			}
+			
+		</script>
+
+	
+	</form>
+</div>
+</body>
+</html>

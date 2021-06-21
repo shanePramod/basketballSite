@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="cart.css" media="screen" title="no title" charset="utf-8">
+
+    
+	<script type="text/javascript">
+	var items=["NMD_R1 SHOES","HARDEN VOL. 4 PRIDE SHOES","CREATOR 365 SHORTS","HANDLE BIZ LONG SLEEVE TEE","HARDEN CREWNECK SWEATSHIRT",
+				"PRO OFFICIAL GAME BALLs","American Size Sport Jordan","size 6 Basketball ball","size 7 pu leather basketball","men jordan basketball shoes",
+				"Nike basketball shorts","youth T-shirt"];
+	var price=[140,130,40,30,75,48,1500,50,40,30,75,48];
+	var total=0;
+
+	function addtoCart(x){
+	var item = document.createElement("p");
+	item.innerHTML=items[x]+"  "+"  "+"  "+"PRICE: $"+price[x]+"  "+"  "+"  "+"QUANTITY: "+"1";
+	item.innerHTML=items[x];
+	price.innerHTML=price[x];
+	var element = document.getElementById("cartsec");
+	element.appendChild(item);
+	total=total+price[x];
+	document.getElementById("total").innerHTML="total is : "+"$"+total;
+	
+}
+	function cart(){
+	document.getElementByClassName("products").style.display="none";
+	document.getElementByClassName("cartContainer").style.display="block";}
+	</script>
+	
+  </head>
+  <body>
+  <div>
+  <img class="logo" src="WEB LOGO.png">
+	<ul>
+	<div class="topnav">
+ 		<li><a href="MainPage.html"><button class="btn">HOME</button></a></li>
+ 		<li><a href="EXPLORA.html">    <button class="btn">EXPLORE</button></a></li>
+ 		<li><a href="gallary.html"> <button class="btn">GALLERY</button></a></li>
+ 		<li><a href="product.html"> <button class="btn">PRODUCTS</button></a></li>
+ 		<li><a href="Quiz Front.html"> <button class="btn">REWARDS</button></a></li>
+ 		<li><a href="feedback.html"> <button class="btn">FEEDBACK</button></a></li>
+ 		<li><a href="about us.html"> <button class="btn">ABOUT US</button></a></li>
+ 		<a href="cart.html"><img src="shop.png" width="50" height="50"  alt="cart"></a>
+ 		<a href="uthpala.html"><img src="user.png" width="35" height="35" style="border-radius: 50px" alt="user"></a>
+ 		
+ 	</div>
+ 	</ul>
+		<hr style="width:auto; height:7px; color: gray;background-color: gray;">
+ 		<br>
+ 		
+  </div>
+  <div class= "products">
+  <div class="container_left">
+  
+                <!--Product 01-->
+                
+				<div class="image">
+                    <img src="product1.jpg" alt="SHOES" width="200px" height="275px">
+                    <div class= "Discription">
+					<h3>NMD_R1 SHOES</h3>
+                    <h3>$140.00</h3>
+                    <h3>Item No: 01</h3>
+					<button class="button" onclick="addtoCart(0)">ADD TO CART</button>
+					</div>
+                    
+                </div>	
+				
+
+                <!--Product 02-->
+                <div class="image">
+                    <img src="product2.jpg" alt="SHOES" width="200px" height="275px">
+                    <div class= "Discription">
+					<h3>HARDEN VOL. 4 PRIDE SHOES </h3>
+                    <h3>$130.00</h3> 
+                    <h3>Item No: 02</h3>
+					<button class="button"onclick="addtoCart(1)">ADD TO CART</button>
+					</div>
+                    
+                </div>
+
+                <!--Product 03-->
+                <div class="image">
+                    <img src="product3.jpg" alt="SHORTS" width="200px" height="275px">
+                    <div class= "Discription">
+					<h3>CREATOR 365 SHORTS </h3>
+                    <h3>$40.00</h3>
+                    <h3>Item No: 03</h3>
+					<button class="button"onclick="addtoCart(2)">ADD TO CART</button>
+					</div>
+                </div>
+
+                <!--Product 04-->
+                <div class="image">
+                    <img src="product4.jpg" alt="tshirt" width="200px" height="275px">
+                    <div class= "Discription">
+					<h3>HANDLE BIZ LONG SLEEVE TEE</h3>
+                    <h3>$30.00</h3>
+                    <h3>Item No: 04</h3>
+					<button class="button"onclick="addtoCart(3)")>ADD TO CART</button>
+					</div>
+                </div>
+
+                <!--Product 05-->
+                <div class="image">
+                    <img src="product5.jpg" alt="SWEATSHIRT" width="200px" height="275px">
+                    <div class= "Discription">
+					<h3>HARDEN CREWNECK SWEATSHIRT</h3>
+                    <h3>$75.00</h3>
+                    <h3>Item No: 05</h3>
+					<button class="button"onclick="addtoCart(4)">ADD TO CART</button>
+					</div>
+                </div>
+
+                <!--Product 06-->
+                <div class="image">
+                    <img src="product6.jpg" alt="ball" width="200px" height="275px">
+                    <div class= "Discription">
+					<h3>PRO OFFICIAL GAME BALLs</h3>
+                    <h3>$48.00</h3>
+                    <h3>Item No: 06</h3>
+					<button class="button"onclick="addtoCart(5)">ADD TO CART</button>
+					</div>
+					</div>
+                   
+                
+            </div>
+			<div class="container_right">
+  
+                <!--Product 07-->
+                <div class="image">
+                    <img src="product7.jpeg" alt="SHOES" width="200px" height="275px"> 				
+                    <div class= "Discription">
+					<h3>American Size Sport Jordan</h3>
+                    <h3>$150</h3>
+                    <h3>Item No: 07</h3>
+					<button class="button"onclick="addtoCart(6)">ADD TO CART</button>
+					</div>
+					</div>
+					
+				
+
+                <!--Product 08-->
+                <div class="image">
+                    <img src="product8.jpeg" alt="ball" width="200px" height="275px">
+                    <div class= "Discription">
+					<h3>size 6 Basketball ball </h3>
+                    <h3>$50.00</h3> 
+                    <h3>Item No: 08</h3>
+					<button class="button" onclick="addtoCart(7)">ADD TO CART</button>
+					</div>
+                    
+                </div>
+
+                <!--Product 09-->
+                <div class="image">
+                    <img src="product9.jpeg" alt="Ball" width="200px" height="275px">
+                    <div class= "Discription">
+					<h3>size 7 pu leather basketball </h3>
+                    <h3>$40.00</h3>
+                    <h3>Item No: 09</h3>
+					<button class="button" onclick="addtoCart(8)">ADD TO CART</button>
+					</div>
+                </div>
+
+                <!--Product 10-->
+                <div class="image">
+                    <img src="product10.png" alt="Shoes" width="200px" height="275px">
+                    <div class= "Discription">
+					<h3>men jordan basketball shoes</h3>
+                    <h3>$30.00</h3>
+                    <h3>Item No: 10</h3>
+					<button class="button" onclick="addtoCart(9)">ADD TO CART</button>
+					</div>
+                </div>
+
+                <!--Product 11-->
+                <div class="image">
+                    <img src="product11.jpg" alt="SWEATSHIRT" width="200px" height="275px">
+                    <div class= "Discription">
+					<h3>Nike basketball shorts</h3>
+                    <h3>$75.00</h3>
+                    <h3>Item No: 11</h3>
+					<button class="button"onclick="addtoCart(10)">ADD TO CART</button>
+					</div>
+                </div>
+
+                <!--Product 12-->
+                <div class="image">
+                    <img src="product12.jpg" alt="ball" width="200px" height="275px">
+                    <div class= "Discription">
+					<h3>youth T-shirt</h3>
+                    <h3>$48.00</h3>
+                    <h3>Item No: 12</h3>
+					<button class="button" onclick="addtoCart(11)">ADD TO CART</button>
+					</div>
+                   </div>
+                
+            </div>
+			
+			
+        </div>   
+		
+	</div>
+	<div class= "cartContainer"style="display:none">
+	<div class="cartItem">Your Order<div id="orderDescription">
+	<img id="producta" height=130px>
+	</div>
+	<div class="product" id="order"></div></div>
+	</div>
+	 
+	
+	<div class="c_form">
+            <div class="title">
+                <h1>Customer Detials</h1>
+            </div>
+            <form action="">
+
+                <input type="text" placeholder="Name">
+                <input type="tel" placeholder="Phone Number">
+                <input type="email" placeholder="Email">
+                <textarea name="Address" id="Address" placeholder="Address"></textarea>
+                <input type="submit" value="Order Now">
+            </form>
+        </div>
+		<section  class="container content-section">
+            <h2 class="section-header">CART</h2>
+            <div  class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM LIST</span>
+            </div>
+            <div id="cartsec" class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span id="total" class="cart-total-price"></span>
+            </div>
+            <!--<button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>-->
+        </section>
+  </body>
+</html>

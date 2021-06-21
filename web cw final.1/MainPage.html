@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Main Page</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="mainpage.css">
+</head>
+<body>
+	<img class="logo" src="WEB LOGO.png">
+	<ul>
+	<div class="topnav">
+ 		<li><a href="MainPage.html"><button class="btn">HOME</button></a></li>
+ 		<li><a href="EXPLORA.html">    <button class="btn">EXPLORE</button></a></li>
+ 		<li><a href="gallary.html"> <button class="btn">GALLERY</button></a></li>
+ 		<li><a href="product.html"> <button class="btn">PRODUCTS</button></a></li>
+ 		<li><a href="Quiz Front.html"> <button class="btn">REWARDS</button></a></li>
+ 		<li><a href="feedback.html"> <button class="btn">FEEDBACK</button></a></li>
+ 		<li><a href="about us.html"> <button class="btn">ABOUT US</button></a></li>
+ 		<a href="cart.html"><img src="shop.png" width="50" height="50"  alt="cart"></a>
+ 		<a href="harindi.html"><img src="user.png" width="35" height="35" style="border-radius: 50px" alt="user"></a>
+ 		
+ 	</div>
+ 	</ul>
+		<hr style="width:auto; height:7px; color: gray;background-color: gray;">
+ 		<br>
+ 		
+<div style="text-align:center">
+  <span class="dot" onclick="slide1()"></span> 
+  <span class="dot" onclick="slide2()"></span> 
+  <span class="dot" onclick="slide3()"></span> 
+</div>
+
+<div class="img1"><img src="img1.jpeg" id="slideset"></div>
+
+<script style="align-content: center;">
+	function slide1(){
+		document.getElementById("slideset").src="img1.jpeg";
+	}
+	function slide2(){
+		document.getElementById("slideset").src="img2.jpeg";
+	}
+	function slide3(){
+		document.getElementById("slideset").src="img3.jpeg";
+	}
+
+</script>
+
+<div class="box">
+ <a href="product.html"> <button class="imgP"> <div class="text"><b>Trending</b></div></button></a>
+ <a href="EXPLORA.html"> <button class="imgN"> <div class="text"><b>Explore</b></div></button></a>
+ <a href="Quiz Front.html"> <button class="imgR"> <div class="text"><b>Rewards</b></div></button></a>
+</div>
+
+<video controls>
+  <source src="video.mp4" type="video/mp4">
+  
+</video>
+<div class="b_sitemap">
+<div class="sitemap">
+	<img class="logoB" src="WEB LOGO.png">
+
+	<div class="links">
+		<a href="MainPage.html"><button class="btnL">HOME</button></a><br>
+ 		<a href="#">    <button class="btnL">EXPLORE</button></a><br>
+ 		<a href="gallary.html"> <button class="btnL">GALLERY</button></a><br>
+ 		<a href="product.html"> <button class="btnL">PRODUCTS</button></a><br>
+ 		<a href="Quiz Front.html"> <button class="btnL">REWARDS</button></a><br>
+ 		<a href="feedback.html"> <button class="btnL">FEEDBACK</button></a><br>
+ 		<a href="sitemap.html"> <button class="btnL">SITE MAP</button></a><br>
+ 		<a href="about us.html"> <button class="btnL">ABOUT US</button></a><br>
+	</div>
+
+</div>
+<div style="text-align: center;">
+	<a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+	<a href="https://twitter.com/" class="fa fa-twitter"></a>
+	<a href="https://www.google.com/" class="fa fa-google"></a>
+	<a href="https://lk.linkedin.com/" class="fa fa-linkedin"></a>
+	<a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+	<a href="https://www.pinterest.com/" class="fa fa-pinterest"></a>
+</div>
+</div>
+
+<button id="increase" class="changeFontSize" type="button">+</button>
+<button id="medium" class="changeFontSize" type="button">medium </button>
+<button id="decrease" class="changeFontSize" type="button">- </button>
+<script>
+let buttons = document.getElementsByClassName("changeFontSize");
+for(let i = 0; i < buttons.length; i++){
+     buttons[i].addEventListener('click', function(e){
+          if(e.target.id == "increase")
+               document.body.style.fontSize = "40px";
+          else if(e.target.id == "decrease")
+               document.body.style.fontSize = "10px";
+		  else if(e.target.id == "medium")
+			   document.body.style.fontSize = "25px";
+     })
+}
+</script>
+</body>
+</html>

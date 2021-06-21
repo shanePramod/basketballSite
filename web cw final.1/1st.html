@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  color: white;
+}
+.grid-container {
+  display: grid;
+  grid-gap: 10px;
+  padding: 10px;
+  background-image: url("background1.jpg");
+}
+
+.grid-item {
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.item1 {
+  grid-column: 1 /  5;
+  grid-row: 1;
+  
+}
+#members{
+  width: 150px;
+  border-radius: 75%;}
+
+</style>
+</head>
+<body>
+<script>
+    setTimeout(myURL, 4000);
+    function myURL(){
+      window.open('MainPage.html');
+    }
+</script>
+
+
+<div class="grid-container">
+  <div class="grid-item item1"><img  src="WEB LOGO.png" alt="LOGO" width="400" height= "400"><br>
+	House of Hoops</div>
+  <div class="grid-item item2"><img id = "members" src="Uthpala.jpg" alt="Uthpala Bandara"><br>
+	 Uthpala Bandara<br>20191305</div>
+  <div class="grid-item item3"><img id = "members" src="harindi.jpg" alt="Harindi Wanigarathne"><br>
+	 Harindi Wanigarathne<br>20191182</div>  
+  <div class="grid-item item4"><img id = "members" src="hashara.jpg" alt="Hashara Ranawaka"><br>
+	 Hashara Ranawaka<br>20191209</div>
+  <div class="grid-item item5"><img id = "members" src="shane.jpg" alt="Shane Pramod"><br>
+	 Shane pramod<br>201981230</div>
+</div>
+
+</body>
+</html>
